@@ -13,8 +13,9 @@ export default NextAuth({
 
   /* Or use a self-made adapter such as the mine,
    which only requires you to pass in the connection string
-   */
+   
   adapter: MongooseAdapter(process.env.MONGODB_URI),
+  */
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_ID,
