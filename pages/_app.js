@@ -1,9 +1,9 @@
-import { SessionProvider } from 'next-auth/react'
-import './styles.css'
+import { SessionProvider } from "next-auth/react";
+import "./styles.css";
 
 // Use of the <SessionProvider> is now mandatory to allow components that call
 // `useSession()` anywhere in your application to access the `session` object.
-export default function App ({ Component, pageProps }) {
+export default function App({ Component, pageProps }) {
   return (
     <SessionProvider
       // Provider options are not required but can be useful in situations where
@@ -21,10 +21,11 @@ export default function App ({ Component, pageProps }) {
         //
         // Note: If a session has expired when keep alive is triggered, all open
         // windows / tabs will be updated to reflect the user is signed out.
-        refetchInterval: 0
+        refetchInterval: 0,
       }}
-      session={pageProps.session} >
+      session={pageProps.session}
+    >
       <Component {...pageProps} />
     </SessionProvider>
-  )
+  );
 }
